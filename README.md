@@ -104,3 +104,20 @@ The main objective of CampusConnect is to make university services more organize
 ---
 
 *Developed as an academic project to simplify university service management.*
+
+## 📸 Project Screenshots
+
+### 🏠 Homepage
+![Homepage](screenshots/homepage.png)
+
+### 👨‍🎓 Student Dashboard
+![Student Dashboard](screenshots/student-dashboard.png)
+
+### 👨‍🏫 Teacher Dashboard
+![Teacher Dashboard](screenshots/teacher-dashboard.png)
+
+### 🛡️ Admin Dashboard
+![Admin Dashboard](screenshots/admin-dashboard.png)
+
+### 📝 Complaint Management
+![Complaint Management](screenshots/complaints.png)
