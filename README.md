@@ -1,43 +1,106 @@
-# CampusConnect
+# 🎓 CampusConnect – Smart University Service Management System
 
-CampusConnect is a PHP/MySQL campus services portal for students, teachers, and administrators.
+A web-based university service management system designed to bring students, teachers, and administrators together on one platform.
 
-## Local setup (XAMPP)
+## 📌 About the Project
 
-1. Start Apache and MySQL from the XAMPP Control Panel.
-2. Import `database.sql` using phpMyAdmin or the MySQL command line. The script creates `campusconnect_db` and sample departments/labs.
-3. If you already have the database from an older CampusConnect version, also import `database_migrations/001_student_profile_picture.sql`.
-4. To update an existing database for unrestricted lab booking purposes, also import `database_migrations/002_unlimited_lab_booking_purpose.sql`.
-5. If your local MySQL credentials differ, update `includes/db.php`.
-6. Open `http://localhost/CampusConnect/` and register a student account.
+CampusConnect is a web application developed to simplify common university services. It provides separate dashboards for Students, Teachers, and Administrators.
 
-### Create the first administrator
+The system helps students access campus notices, submit complaints, request appointments with teachers, and book university laboratories.
 
-Admin registration is intentionally not public. First generate a password hash using the PHP executable bundled with XAMPP (replace the sample password):
+## ✨ Key Features
 
-```powershell
-C:\xampp\php\php.exe -r "echo password_hash('ChangeThisPassword!', PASSWORD_DEFAULT), PHP_EOL;"
+### 👨‍🎓 Student
+- Student Registration and Login
+- Personal Profile Management
+- View Campus Notices
+- Submit and Track Complaints
+- Request Teacher Appointments
+- Request Laboratory Bookings
+
+### 👨‍🏫 Teacher
+- Teacher Dashboard
+- View Student Appointment Requests
+- Approve or Reject Appointments
+- Mark Appointments as Completed
+- View Campus Notices
+
+### 🛡️ Administrator
+- Admin Dashboard
+- Publish and Manage Notices
+- Manage Student Complaints
+- Create Teacher Accounts
+- Add and Manage Laboratories
+- Approve or Reject Lab Bookings
+- View User Directory
+
+## 🛠️ Technologies Used
+
+| Technology | Purpose |
+|---|---|
+| HTML | Website Structure |
+| CSS | Website Design |
+| JavaScript | Client-side Interaction |
+| PHP | Backend Development |
+| MySQL | Database Management |
+| XAMPP | Local Development Server |
+
+## ⚙️ Installation & Setup
+
+### Requirements
+- XAMPP
+- Web Browser
+- Git (optional)
+
+### Steps
+
+1. Clone or download this repository.
+2. Copy the project folder into `C:\xampp\htdocs\`.
+3. Start Apache and MySQL from XAMPP Control Panel.
+4. Open phpMyAdmin: `http://localhost/phpmyadmin/`
+5. Create a database named `campusconnect_db`.
+6. Import the provided `database.sql` file.
+7. Open your browser and visit:
+
+   `http://localhost/CampusConnect/`
+
+## 🔐 Security Features
+
+- Password Hashing
+- Prepared SQL Statements
+- Session-based Authentication
+- Role-based Access Control
+- CSRF Token Verification
+
+## 📁 Project Structure
+
+```text
+CampusConnect/
+├── css/
+├── js/
+├── includes/
+├── uploads/
+├── database.sql
+├── index.php
+├── login.php
+├── register.php
+├── student_dashboard.php
+├── teacher_dashboard.php
+└── admin_dashboard.php
 ```
 
-In phpMyAdmin, select `campusconnect_db`, open the SQL tab, and run the following statements with your own name, email, and generated hash:
+## 🎯 Project Objective
 
-```sql
-INSERT INTO users (name, email, password, role)
-VALUES ('Campus Administrator', 'admin@example.com', 'PASTE_GENERATED_HASH_HERE', 'Admin');
+The main objective of CampusConnect is to make university services more organized, accessible, and efficient through a centralized web-based platform.
 
-INSERT INTO admins (user_id)
-VALUES (LAST_INSERT_ID());
-```
+## 👨‍💻 Project Information
 
-Choose a unique, strong password before generating the hash, then sign in with that email and password.
+**Project Name:** CampusConnect  
+**Project Type:** University Academic Project  
+**Course:** System Analysis and Design (Sessional)  
+**Department:** Computer Science and Engineering  
+**Institution:** CCN University of Science and Technology
 
-Administrators can create teacher accounts from the admin dashboard. Student accounts are created through public registration.
+---
 
-## Included modules
-
-- Role-aware login and student registration
-- Student profile, notices, complaints, appointment requests, and lab booking
-- Student profile picture upload, replacement, and removal (JPEG, PNG, or WebP; up to 5 MB)
-- Teacher appointment review
-- Admin notice publishing, complaint response, teacher account creation, and lab management
-- CSRF protection on forms, prepared SQL statements, password hashing, and role-based authorization
+*Developed as an academic project to simplify university service management.*
