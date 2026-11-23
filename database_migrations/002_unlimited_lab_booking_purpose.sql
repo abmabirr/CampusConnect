@@ -1,0 +1,2 @@
+ALTER TABLE lab_bookings
+    MODIFY COLUMN purpose MEDIUMTEXT NOT NULL;
